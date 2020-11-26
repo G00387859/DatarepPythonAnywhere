@@ -1,17 +1,17 @@
-#import mysql.connector
-#from mysql.connector import cursor
-import MySQLdb as sql_db
-from MySQLdb import cursors
+import mysql.connector
+from mysql.connector import cursor
+#import MySQLdb as sql_db
+#from MySQLdb import cursors
 import dbconfig as cfg
 import collections
 
 class StoreDao:
-    mydb = sql_db.connect(
+    ##mydb = sql_db.connect(
+    mydb = mysql.connector.connect(  
         host=cfg.mysql['host'],
         user=cfg.mysql['username'],
         password=cfg.mysql['password'],
-        database=cfg.mysql['database']
-        )
+        database=cfg.mysql['database'])
     def insert(self, product):
         try:
             cursor = self.mydb.cursor()
