@@ -1,22 +1,21 @@
-from flask import Flask, url_for, request, redirect, abort, jsonify
+from flask import render_template,Flask, url_for, request, redirect, abort, jsonify,Response
 #from BookDao import bookDao
 from storeDao import StoreDao
+#from staticpages import 'index.html' as idex
 
 app = Flask(__name__, static_url_path='', static_folder='staticpages')
 
 
 @app.route('/')
 def index():
-    return "hello"
-    #return redirect('/products/index.html')
-#get all
+     return app.send_static_file('home.html')
 
 
 @app.route('/products')
 def getAll():
     return jsonify(StoreDao.getAll(StoreDao))
 # find By id
-
+#
 
 
 @app.route('/products/<productName>')

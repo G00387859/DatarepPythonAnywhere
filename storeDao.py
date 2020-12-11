@@ -5,6 +5,7 @@ from mysql.connector import cursor
 import dbconfig as cfg
 import collections
 
+
 class StoreDao:
     ##mydb = sql_db.connect(
     mydb = mysql.connector.connect(  
@@ -29,7 +30,7 @@ class StoreDao:
         except:
             return "possible database duplicate"
         
-
+                
     def getAll(self):
         cursor = self.mydb.cursor()
         sql = 'select * from store'
