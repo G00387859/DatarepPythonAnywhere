@@ -65,7 +65,7 @@
 	<div class="menu">
 		<!-- when the buttons are selected select another page-->
 		<a href="home.html">Home</a>
-		<a id="loginlabel" ></a>	
+	<!-- <a id="loginlabel" ></a> -->	
 	</div> 
         <div id="create-update" style="display:none">
             <h2>create-edit</h2>
@@ -106,19 +106,7 @@
 
         </div>
 
-        <script>
-		// this is an code will get the set cookie and assign to a label so the cookie will be set in from the login page.
-// Label will equal "Welcome before login"
-var x = myFunction();
-document.getElementById("loginlabel").innerHTML = x;
-function myFunction(){
-let name = document.cookie;
-return name;
-
-}
-		
-		
-		
+        <script>		
             function showCreate(){
                 document.getElementById('display').style.display = "none"
                 document.getElementById('update-button').style.display = "none"
