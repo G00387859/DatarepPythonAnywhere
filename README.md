@@ -3,6 +3,6 @@ I have created and changed to a new repo during this project,https://github.com/
 This contains the project.<br/> 	
 In this project the objectivate to create a rest_server and repersent data from backend mysql table.<br/> 
 The rest server uses flask<br/>
-While the code runs on python anywhere I could not get the backend database to stay connected even when I applied the changes made in the optional lectures and reverted as did not make a difference. I guess I have to use the SQLALCHEMY, which I have not done for the submission. If the session on pythonanywhere fallover, and it will, the code is identical to the code in the project.<br/>
+While the code runs on python anywhere I could not get the backend database to stay connected even when I applied the changes made in the optional lectures and reverted as did not make a difference. I guess I have to use the SQLALCHEMY, which I have not done for the submission. If the session on pythonanywhere fallover, and it will, the code is identical to the code in the project.<br/> I have added a doc that show it working called Pythonanywhere working. in the repo.<br/>
 I have a login page which is simiular to a login page for w3 schools referenced in the code. I have added to the repo a document that shows the pythonanyhere working.
 
