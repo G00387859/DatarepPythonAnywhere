@@ -8,14 +8,19 @@ import collections
 
 class StoreDao:
     ##mydb = sql_db.connect(
+    # Make the connection to my sql databse. 
+    # the variables are pull from a congiuration file
     mydb = mysql.connector.connect(  
         host=cfg.mysql['host'],
         user=cfg.mysql['username'],
         password=cfg.mysql['password'],
         database=cfg.mysql['database'])
+    
+    #insert into the mysql databse
     def insert(self, product):
         try:
             cursor = self.mydb.cursor()
+            #build the mysql statement
             sql = "insert into store (productType,productName, productPrice) values (%s,%s,%s)"
             values = [
                 product['productType'],
@@ -30,7 +35,7 @@ class StoreDao:
         except:
             return "possible database duplicate"
         
-                
+    # this method will get query the mysql database to fetchall the data with the table             
     def getAll(self):
         cursor = self.mydb.cursor()
         sql = 'select * from store'
@@ -48,7 +53,7 @@ class StoreDao:
                 #print(book)
             returnArray.append(book)
         return returnArray 
-    
+    # this method will get the row from the database table where the id = the product name
     def findById(self, productName):
         try:
             cursor = self.mydb.cursor()
@@ -64,7 +69,7 @@ class StoreDao:
             return dictionary
         except:
             return "findById err"
-        
+    # this method will update the the row that hold the using the key to access the specif row.
     def update(self, product):
         try:
             cursor = self.mydb.cursor()
@@ -86,7 +91,7 @@ class StoreDao:
         except:
             return "update error"
         
-    
+    # delete the row that contains the key product
     def delete(self, productName):
         try:
             cursor = self.mydb.cursor()
